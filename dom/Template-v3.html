@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{titulo}}</p>
+        <p>{{saudacao()}}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Usando Vue.js'
+            },
+            methods: {
+                saudacao: function() {
+                    return this.titulo
+                    // Acessando o titulo fora do Template é necessário
+                    // usar o this. O this nesse caso representa a 
+                    // instancia do Vue ou seja, seria Vue.titulo
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!-- Notes: o Vue não deixar nós utilizarmos o mesmo nome de uma
+variavel em data como o nome de uma função, ou um ou outro. -->
+

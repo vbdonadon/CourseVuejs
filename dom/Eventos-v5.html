@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+    <div id="app">
+        <p>{{ contador }}</p>
+        <button v-on:click="somar(4)">Somar 1</button>
+        <p v-on:mousemove="atualizarXY">Mouse: {{x}} & {{y}}
+            <span v-on:mousemove="parar">Parar aqui!</span>
+        </p>
+        <a v-on:click.prevent href="http://www.google.com.br">Google</a><br><br>
+        <input type="text" v-on:keyup.enter="exibirAlerta">
+    </div>
+    
+    <script>
+        new Vue({
+            // O el é o elemento que passamos para dizer o que essa instância vai controlar
+            el: '#app',
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0,
+            },
+            methods: {
+                somar(somar) {
+                    this.contador += somar
+                },
+                atualizarXY(event) {
+                    this.x = event.clientX
+                    this.y = event.clientY
+                },
+                parar(e) {
+                    e.stopPropagation();
+                },
+                exibirAlerta(){
+                    alert('Olha o alerta ai!')
+                }
+            }
+        })
+    </script>
+
+
+</body>
+</html>
