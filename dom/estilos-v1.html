@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #app {
+            display: flex;
+            justify-content: space-around;
+        }
+        .demo {
+            font-family: Gotham;
+            width: 100px;
+            height: 100px;
+            background: grey;
+        }
+        
+        .c1 {
+            background-color: red;
+        }
+        
+        .c2 {
+            background-color: green;
+        }
+        
+        .c3 {
+            background-color: blue;
+        }
+        </style>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue"></script>
+
+    <section id="app">
+        <div class="demo" :class="{c1: aplicarC1}" @click="aplicarC1 =  !aplicarC1"></div>
+        <div class="demo" ></div>
+        <div class="demo"></div>
+    </section>
+
+    <script>
+        new Vue ({
+            el: '#app',
+            data: {
+                aplicarC1: false
+            }
+            
+        })
+    </script>
+</body>
+</html>

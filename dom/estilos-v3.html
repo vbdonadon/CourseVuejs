@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .caixas {
+            display: flex;
+            justify-content: space-around;
+        }
+        .demo {
+            font-family: Gotham;
+            width: 100px;
+            height: 100px;
+            background: grey;
+        }
+        
+        .c1 {
+            background-color: red;
+        }
+        
+        .c2 {
+            background-color: green;
+        }
+        
+        .c3 {
+            background-color: blue;
+        }
+
+        .rotate {
+            transform: rotate(45deg);
+        }
+        </style>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue"></script>
+
+    <section id="app">
+        <div class="caixas">
+            <div class="demo" :class="estilo1" @click="aplicarC1 = !aplicarC1"></div>
+            <div class="demo"></div>
+            <div class="demo" :class="[classeCSS, 'rotate']"></div>
+        </div>
+        <hr>
+        <input type="text" v-model="classeCSS">
+
+    </section>
+
+    <script>
+        new Vue ({
+            el: '#app',
+            data: {
+                aplicarC1: false,
+                classeCSS: 'c1',
+                rotate: 'girar'
+            },
+            computed: {
+                estilo1() {
+                    return {
+                        c1: this.aplicarC1,
+                        c2: !this.aplicarC1
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

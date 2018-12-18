@@ -29,9 +29,16 @@
                 // somente quando necessário, não o computando sem
                 // necessidade.
                 resultado(){
-                    console.log('Metodo sempre computado.')
                     return this.contador >= 5 ? 
                         'Maior ou igual a 5' : 'Menor que 5'
+                }
+            },
+            watch: {
+                contador(novo, antigo){
+                    console.log(novo, antigo)
+                    setTimeout(() => {
+                        this.contador = 0
+                    }, 2000)
                 }
             },
             methods: {
