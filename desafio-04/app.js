@@ -19,7 +19,7 @@ new Vue({
       let valor = 0
       const temporizador = setInterval(() => {
         valor += 5
-        this.widthPerSec = `${valor}%`
+        this.widthPerSec = `${valor}%`"
         if (valor == 100){ clearInterval(temporizador) }
       }, 0500)
     }

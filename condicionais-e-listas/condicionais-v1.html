@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue"></script>
+
+    <div id="app" style="font-family: Gotham">
+        <p v-if="logado">Usuário logado: {{nome}}</p>
+        <p v-else>Nenhum usuário logado.</p>
+        <button @click="logado = !logado">{{logado ? 'Sair' : 'Entrar'}}</button>
+    </div>
+
+    <script>
+        new Vue ({
+            el: '#app',
+            data: {
+                nome: 'Vinicius',
+                logado: false
+            }
+        })
+    </script>
+</body>
+</html>
