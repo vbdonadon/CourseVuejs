@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        #app {
+        .caixas {
             display: flex;
             justify-content: space-around;
         }
@@ -27,6 +27,10 @@
         .c3 {
             background-color: blue;
         }
+
+        .rotate {
+            transform: rotate(45deg);
+        }
         </style>
 </head>
 
@@ -34,22 +38,30 @@
     <script src="https://unpkg.com/vue"></script>
 
     <section id="app">
-        <div class="demo" :class="estilo1" @click="aplicarC1 = !aplicarC1"></div>
-        <div class="demo" ></div>
-        <div class="demo"></div>
+        <div class="caixas">
+            <div class="demo" :style="{backgroundColor: cor}"></div>
+            <div class="demo" :style="[meuEstilo, {height: altura}]"></div>
+            <div class="demo"></div>
+        </div>
+        <hr>
+        <input type="text" v-model="cor">
+        <input type="text" v-model="largura">
+
     </section>
 
     <script>
         new Vue ({
             el: '#app',
             data: {
-                aplicarC1: false
+                cor: 'red',
+                largura: 100,
+                altura: 20
             },
             computed: {
-                estilo1() {
-                    return {
-                        c1: this.aplicarC1,
-                        c2: !this.aplicarC1
+                meuEstilo(){
+            return {
+                    backgroundColor: this.cor,
+                    width: `${this.largura}px`
                     }
                 }
             }
