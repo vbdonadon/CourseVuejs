@@ -10,8 +10,9 @@
 
     <div id="app" style="font-family: Gotham">
        <ul>
-            <li v-for="cor in cores">{{cor}}</li>
+            <li v-for="(item, index) in cores">{{index+1}}) {{item}}</li>
        </ul>
+
     </div>
 
     <script>
@@ -28,3 +29,9 @@
     </script>
 </body>
 </html>
+
+<style>
+    ul {
+        list-style: none;
+    }
+</style>

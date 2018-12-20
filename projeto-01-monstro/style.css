@@ -1,0 +1,107 @@
+/* General */
+
+html {
+    font-family: Gotham, Arial;
+}
+
+#app {
+    display: flex;
+    flex-direction: column; 
+}
+
+.panel {
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15)
+}
+
+/* Àrea dos pontos */
+
+.scores {
+    display: flex;
+}
+
+.score {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score h1 {
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+
+.life-bar {
+    width: 80%;
+    height: 20px;
+    border: 1px solid #AAA;
+    margin-bottom: 10px;
+}
+
+.life-bar .life {
+    height: 100%;
+    background-color: green;
+}
+
+.life-bar .life.danger {
+    background-color: red;
+}
+
+/* Àrea do Resultado */
+
+.result {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.win {
+    color: green;
+}
+
+.lose {
+    color: red;
+}
+
+/* Àrea dos Botões */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    margin-left: 10px;
+    font-family: Gotham, Arial;
+    padding: 15px;
+    height: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.new-game {
+    background-color: #4253af;
+    color: #FFF;
+}
+
+.attack {
+    background-color: #E51C23;
+    color: #FFF;
+}
+
+.especial-attack {
+    background-color: #FF9800;
+    color: #000;
+}
+
+.heal {
+    background-color: #259B24;
+    color: #FFF;
+}
+
+.give-up {
+    background-color: #BBB;
+    color: #000;
+}

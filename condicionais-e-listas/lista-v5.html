@@ -10,9 +10,27 @@
 
     <div id="app" style="font-family: Gotham">
        <ul>
-            <li v-for="cor in cores">{{cor}}</li>
+            <li v-for="(item, index) in cores">{{index + 1}}) {{item}}</li>
        </ul>
+       <!-- Quando usa o Template, a tag 'Template' é não 
+        reenderizado, caso usemos outra tag, ela será reenderizada -->
+       <template v-for="(item, index) in cores"> 
+           <h1>{{item}}</h1>
+           <p>{{index}}</p>
+       </template>
+
+       <li v-for="item in pessoas">
+           <div v-for="(valor, chave, index) in item">
+                {{index + 1}}) {{chave}} = {{valor}}
+           </div>
+       </li>
+       <br>
+       <div v-for="item in 10">
+           {{item}}
+       </div>
+       
     </div>
+    
 
     <script>
         new Vue ({
@@ -28,3 +46,9 @@
     </script>
 </body>
 </html>
+
+<style>
+    ul {
+        list-style: none;
+    }
+</style>
