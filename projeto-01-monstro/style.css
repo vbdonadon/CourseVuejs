@@ -1,21 +1,21 @@
-/* General */
+/* Geral */
 
 html {
-    font-family: Gotham, Arial;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #app {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .panel {
     margin: 10px;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15)
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Àrea dos pontos */
+/* Área dos Pontos */
 
 .scores {
     display: flex;
@@ -38,10 +38,11 @@ html {
     width: 80%;
     height: 20px;
     border: 1px solid #AAA;
-    margin-bottom: 10px;
 }
 
 .life-bar .life {
+    display: flex;
+    justify-content: center;
     height: 100%;
     background-color: green;
 }
@@ -50,22 +51,24 @@ html {
     background-color: red;
 }
 
-/* Àrea do Resultado */
+/* Área do Resultado */
 
 .result {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     font-size: 1.3rem;
+    font-weight: 600;
 }
 
-.win {
+.result .win {
     color: green;
 }
 
-.lose {
+.result .lose {
     color: red;
 }
 
-/* Àrea dos Botões */
+/* Área dos Botões (Controle do Jogo) */
 
 .buttons {
     display: flex;
@@ -73,35 +76,65 @@ html {
 }
 
 .btn {
-    margin-left: 10px;
-    font-family: Gotham, Arial;
-    padding: 15px;
-    height: 50px;
+    padding: 5px 10px;
+    margin: 0px 10px;
+    border-radius: 5px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 .new-game {
     background-color: #4253af;
-    color: #FFF;
+    color: #fff;
 }
 
 .attack {
-    background-color: #E51C23;
-    color: #FFF;
+    background-color: #e51c23;
+    color: #fff;
 }
 
 .especial-attack {
-    background-color: #FF9800;
+    background-color: #ff9800;
     color: #000;
 }
 
 .heal {
-    background-color: #259B24;
+    background-color: #259b24;
     color: #FFF;
 }
 
 .give-up {
     background-color: #BBB;
     color: #000;
+}
+
+/* Área dos Logs */
+
+.logs ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logs ul li {
+    display: flex;
+    justify-content: center;
+    margin: 4px 0px;
+    padding: 3px 0px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+.player {
+    background-color: #4253afaa;
+    color: #fff;
+}
+
+.monster {
+    background-color: #e51c23aa;
+    color: #fff;
 }
